@@ -1,0 +1,10 @@
+SELECT COUNT(CLIENTE) QT, VENDEDOR FROM (SELECT CD.CUSTOMER_ID CLIENTE, ID.SELLER_ID VENDEDOR FROM CUSTOMER_DATASET CD
+INNER JOIN ORDERS_DATASET OD ON (OD.CUSTOMER_ID = CD.CUSTOMER_ID)
+INNER JOIN ITEMS_DATASET ID ON (OD.ORDER_ID = ID.ORDER_ID))
+GROUP BY VENDEDOR
+ORDER BY QT DESC
+
+/*
+Essa consulta teve intenção de exibir a quantidade de clientes atendidos por vendedor, ordenando de forma descendente. 
+Ou seja, os vendedores que atenderam mais clientes serão os primeiros na consulta.
+*/
