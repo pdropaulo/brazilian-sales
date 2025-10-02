@@ -13,7 +13,7 @@ O foco principal é entender **quem compra, de quem compra, quanto gasta e onde 
 ---
 
 ## 🧠 Base de Dados  
-📊 Kaggle Dataset: [🔗 Inserir link aqui](COLOQUE_AQUI_O_LINK_DO_DATASET)  
+📊 Kaggle Dataset: 🔗 [Brazilian E-Commerce Public Dataset by Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) 
 
 A base inclui informações sobre:
 - 👤 Clientes  
