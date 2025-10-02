@@ -1,0 +1,10 @@
+SELECT COUNT(ID_), ESTADO FROM (SELECT OD.ORDER_ID ID_, CD.CUSTOMER_STATE ESTADO FROM ORDERS_DATASET OD
+INNER JOIN CUSTOMER_DATASET CD ON (OD.CUSTOMER_ID = CD.CUSTOMER_ID))
+GROUP BY ESTADO
+ORDER BY COUNT(ID_) DESC
+
+/*
+Nessa análise, fazemos uma consulta do ID do pedido e o estado do cliente a fim de descobrir a contagem de pedidos 
+por estado. O ORDER BY é usado nessa consulta com fomrato descendente a fim de selecionar a consulta
+do maior para o menor valor.
+*/
