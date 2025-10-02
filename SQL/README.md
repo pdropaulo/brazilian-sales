@@ -39,8 +39,7 @@ FROM (
   INNER JOIN ORDERS_DATASET OD ON (OD.CUSTOMER_ID = CD.CUSTOMER_ID)
   INNER JOIN ITEMS_DATASET ID ON (OD.ORDER_ID = ID.ORDER_ID)
 )
-
-![sum-payment-city-state](https://github.com/user-attachments/assets/a0564bee-19dc-4c73-93e8-7b1fba28e5ed)
-
 GROUP BY VENDEDOR
 ORDER BY QT DESC;
+
+![sum-payment-city-state](https://github.com/user-attachments/assets/a0564bee-19dc-4c73-93e8-7b1fba28e5ed)
