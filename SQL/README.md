@@ -23,6 +23,13 @@ A base inclui informações sobre:
 
 ---
 
+### ♨ Procedimento
+Após baixadas as planilhas, o uso de knime foi necessário para transformar os aquivos .csv em uma base de dados. 
+"O KNIME é uma plataforma de código aberto e "low-code" para análise de dados, integração e aprendizado de máquina. Seu uso de uma interface visual de arrastar e soltar (drag-and-drop) permite que usuários construam fluxos de trabalho analíticos sem escrever linhas de código, embora também ofereça a opção de integrar códigos para personalização avançada."
+![brazilian_sales-knime-etl](https://github.com/user-attachments/assets/40486059-becc-4ca3-af47-9cbf535369c4)
+
+---
+
 ## 🔎 Consultas SQL e Insights
 
 ### 1️⃣ Count customers per seller 👥🛍️
