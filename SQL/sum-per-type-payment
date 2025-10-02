@@ -1,0 +1,22 @@
+SELECT CAST(SUM(PAG) AS NUMERIC(15, 2)), TIPO, CLIENTE, COD FROM (SELECT PD.PAYMENT_VALUE PAG, PD.PAYMENT_TYPE TIPO, CUSTOMER_DATASET.CUSTOMER_ID CLIENTE, 
+CUSTOMER_DATASET.CUSTOMER_ZIP_CODE_PREFIX COD
+		FROM PAYMENT_DATASET PD
+		INNER JOIN ORDERS_DATASET OD ON (OD.ORDER_ID = PD.ORDER_ID)
+		INNER JOIN CUSTOMER_DATASET ON (OD.CUSTOMER_ID = CUSTOMER_DATASET.CUSTOMER_ID))
+GROUP BY 2, 3, 4
+
+/*
+Nessa análise, a intenção foi demonstrar a soma de pagamentos por tipo de pagamento (cartão de crédito, boleto, entre outros).
+Também na consulta foram extraídas informações como id e código postal de cliente. No entanto, como não possui repetição de 
+cliente, o resultado é individual. Assim, faz-se necessário remover esses itens da consulta para conseguir a soma por tipo 
+de pagamento.
+
+Vale ressaltar que a consulta atenrior não seria possível em sistema Oracle, sendo necessário adaptar para o formato 
+com o uso das aliases adotadas:
+SELECT CAST(SUM(PAG) AS NUMERIC(15, 2)), TIPO, CLIENTE, COD FROM (SELECT PD.PAYMENT_VALUE PAG, PD.PAYMENT_TYPE TIPO, CUSTOMER_DATASET.CUSTOMER_ID CLIENTE, 
+CUSTOMER_DATASET.CUSTOMER_ZIP_CODE_PREFIX COD
+		FROM PAYMENT_DATASET PD
+		INNER JOIN ORDERS_DATASET OD ON (OD.ORDER_ID = PD.ORDER_ID)
+		INNER JOIN CUSTOMER_DATASET ON (OD.CUSTOMER_ID = CUSTOMER_DATASET.CUSTOMER_ID))
+GROUP BY CLIENTE, COD, TIPO
+*/
