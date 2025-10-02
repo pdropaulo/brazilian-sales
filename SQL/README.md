@@ -41,6 +41,69 @@ FROM (
 )
 GROUP BY VENDEDOR
 ORDER BY QT DESC;
+```
+
+![count-customer-per-seller](https://github.com/user-attachments/assets/6554f6fa-50dd-4c35-a0c0-7f95b65a3d6b)
+
+### 2️⃣ Count orders per state 📦📍
+
 ```sql
+SELECT COUNT(ID_) ESTADO 
+FROM (
+  SELECT OD.ORDER_ID ID_, CD.CUSTOMER_STATE ESTADO 
+  FROM ORDERS_DATASET OD
+  INNER JOIN CUSTOMER_DATASET CD ON (OD.CUSTOMER_ID = CD.CUSTOMER_ID)
+)
+GROUP BY ESTADO
+ORDER BY COUNT(ID_) DESC;
+```
+
+![sum-orders-per-state](https://github.com/user-attachments/assets/dfc5329c-4add-4234-a6df-13cb6aa997d4)
+
+### 3️⃣ Sum payment per city and state 💰🌆
+
+```sql
+SELECT ESTADO, CIDADE, CAST(SUM(PAG) AS NUMERIC(15, 2))
+FROM (
+  SELECT PD.PAYMENT_VALUE PAG, CUSTOMER_DATASET.CUSTOMER_CITY CIDADE, CUSTOMER_DATASET.CUSTOMER_STATE ESTADO
+  FROM PAYMENT_DATASET PD
+  INNER JOIN ORDERS_DATASET OD ON (OD.ORDER_ID = PD.ORDER_ID)
+  INNER JOIN CUSTOMER_DATASET ON (OD.CUSTOMER_ID = CUSTOMER_DATASET.CUSTOMER_ID)
+)
+GROUP BY 1, 2;
+```
 
 ![sum-payment-city-state](https://github.com/user-attachments/assets/a0564bee-19dc-4c73-93e8-7b1fba28e5ed)
+
+### 4️⃣ Sum per type payment 💳📊
+
+```sql
+SELECT CAST(SUM(PAG) AS NUMERIC(15, 2)), TIPO, CLIENTE, COD 
+FROM (
+  SELECT PD.PAYMENT_VALUE PAG, PD.PAYMENT_TYPE TIPO, CUSTOMER_DATASET.CUSTOMER_ID CLIENTE, 
+         CUSTOMER_DATASET.CUSTOMER_ZIP_CODE_PREFIX COD
+  FROM PAYMENT_DATASET PD
+  INNER JOIN ORDERS_DATASET OD ON (OD.ORDER_ID = PD.ORDER_ID)
+  INNER JOIN CUSTOMER_DATASET ON (OD.CUSTOMER_ID = CUSTOMER_DATASET.CUSTOMER_ID)
+)
+GROUP BY 2, 3, 4;
+```
+![sum-per-type-payment](https://github.com/user-attachments/assets/3ff8bcc3-9d1f-4a9b-8832-684afb603951)
+![sum-per-type-payment-2](https://github.com/user-attachments/assets/4f4a0262-8b4a-497e-926f-3e91eb60d3c4)
+
+📬 Contato
+
+📧 E-mail: [seu-email-aqui]
+💼 LinkedIn: [seu-linkedin-aqui]
+🐙 GitHub: [seu-github-aqui]
+
+🌟 Contribuição
+
+Fique à vontade para sugerir melhorias ou abrir issues para discussões!
+
+📌 Créditos
+
+📊 Dataset disponível no Kaggle: 🔗 Inserir link aqui
+
+👨‍💻 Projeto desenvolvido para fins de estudo e prática em SQL.
+
