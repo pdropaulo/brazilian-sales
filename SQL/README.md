@@ -41,5 +41,6 @@ FROM (
 )
 GROUP BY VENDEDOR
 ORDER BY QT DESC;
+```sql
 
 ![sum-payment-city-state](https://github.com/user-attachments/assets/a0564bee-19dc-4c73-93e8-7b1fba28e5ed)
