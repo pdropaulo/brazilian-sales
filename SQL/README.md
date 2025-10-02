@@ -10,10 +10,6 @@ Aqui explorei o universo de compras online no Brasil utilizando consultas **SQL*
 Este repositório tem como objetivo **explorar dados reais de e-commerce brasileiro** por meio de **consultas SQL** que revelam padrões de comportamento de clientes, desempenho de vendedores e distribuição de receita.  
 O foco principal é entender **quem compra, de quem compra, quanto gasta e onde está localizado**.
 
-📁 Estrutura do projeto:
-- 📂 `SQL/` – Pasta com todas as consultas utilizadas no projeto.  
-- 📄 `README.md` – Este arquivo que explica a estrutura e propósito da análise.  
-
 ---
 
 ## 🧠 Base de Dados  
@@ -93,17 +89,15 @@ GROUP BY 2, 3, 4;
 
 📬 Contato
 
-📧 E-mail: [seu-email-aqui]
-💼 LinkedIn: [seu-linkedin-aqui]
-🐙 GitHub: [seu-github-aqui]
+📧 E-mail: [p.paulo.pp08@gmail.com](p.paulo.pp08@gmail.com)  
+💼 LinkedIn: [Pedro Andrade](https://www.linkedin.com/in/pdropaulora)  
+🐙 GitHub: [pdropaulo](https://www.github.com/pdropaulo)  
 
-🌟 Contribuição
+🌟 Contribuição  
 
-Fique à vontade para sugerir melhorias ou abrir issues para discussões!
+Fique à vontade para sugerir melhorias ou abrir issues para discussões!  
 
-📌 Créditos
+📌 Créditos  
 
-📊 Dataset disponível no Kaggle: 🔗 Inserir link aqui
-
-👨‍💻 Projeto desenvolvido para fins de estudo e prática em SQL.
-
+📊 Dataset disponível no Kaggle: 🔗 [Brazilian E-Commerce Public Dataset by Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)  
+👨‍💻 Projeto desenvolvido para fins de estudo e prática em SQL.  
