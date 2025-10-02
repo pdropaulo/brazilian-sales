@@ -1,0 +1,10 @@
+SELECT COUNT(DISTINCT OD.CUSTOMER_ID) FROM ORDERS_DATASET OD /*99.441 CLIENTES*/
+
+SELECT COUNT(DISTINCT OD.ORDER_ID) FROM ORDERS_DATASET OD /*99.441 PEDIDOS*/
+
+SELECT CAST(SUM(PD.PAYMENT_VALUE) AS NUMERIC(15, 2)) FROM PAYMENT_DATASET PD /*16.008.872,12*/
+
+/* 
+Análise inicial realizada com SQL para decobrir alguns valores de referência, tais como 
+a quantidade de clientes, de pedidos, e a receita total (soma de pagamentos).
+*/
