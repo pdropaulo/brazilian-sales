@@ -83,6 +83,20 @@ FROM (
 GROUP BY 1, 2;
 ```
 
+Nesta etapa, a prioridade foi descobrir a receita total por cidade ou por estado.
+Uma sugestão poderia ser acrescentar ORDER BY CAST(SUM(PAG) AS NUMERIC(15, 2)) DESC
+para ordenar a consulta do pagamento maior para o menor.
+
+No oracle, essa consulta não poderia ser feita com o "GROUP BY 1, 2", sendo necessariamente
+realizada pelos aliases escolhidos, conforme:
+```sql
+SELECT ESTADO, CIDADE, CAST(SUM(PAG) AS NUMERIC(15, 2))
+FROM (SELECT PD.PAYMENT_VALUE PAG, CUSTOMER_DATASET.CUSTOMER_CITY CIDADE, CUSTOMER_DATASET.CUSTOMER_STATE ESTADO
+		FROM PAYMENT_DATASET PD
+		INNER JOIN ORDERS_DATASET OD ON (OD.ORDER_ID = PD.ORDER_ID)
+		INNER JOIN CUSTOMER_DATASET ON (OD.CUSTOMER_ID = CUSTOMER_DATASET.CUSTOMER_ID))
+GROUP BY ESTADO, CIDADE
+```
 ![sum-payment-city-state](https://github.com/user-attachments/assets/a0564bee-19dc-4c73-93e8-7b1fba28e5ed)
 
 ### 4️⃣ Sum per type payment 💳📊
