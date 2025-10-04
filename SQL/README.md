@@ -46,6 +46,9 @@ GROUP BY VENDEDOR
 ORDER BY QT DESC;
 ```
 
+Essa consulta teve intenção de exibir a quantidade de clientes atendidos por vendedor, ordenando de forma descendente. 
+Ou seja, os vendedores que atenderam mais clientes serão os primeiros na consulta.
+
 ![count-customer-per-seller](https://github.com/user-attachments/assets/6554f6fa-50dd-4c35-a0c0-7f95b65a3d6b)
 
 ### 2️⃣ Count orders per state 📦📍
