@@ -64,6 +64,10 @@ GROUP BY ESTADO
 ORDER BY COUNT(ID_) DESC;
 ```
 
+Nessa análise, fazemos uma consulta do ID do pedido e o estado do cliente a fim de descobrir a contagem de pedidos 
+por estado. O ORDER BY é usado nessa consulta com fomrato descendente a fim de selecionar a consulta
+do maior para o menor valor.
+
 ![sum-orders-per-state](https://github.com/user-attachments/assets/dfc5329c-4add-4234-a6df-13cb6aa997d4)
 
 ### 3️⃣ Sum payment per city and state 💰🌆
