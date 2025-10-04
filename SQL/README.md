@@ -115,6 +115,21 @@ GROUP BY 2, 3, 4;
 ![sum-per-type-payment](https://github.com/user-attachments/assets/3ff8bcc3-9d1f-4a9b-8832-684afb603951)
 ![sum-per-type-payment-2](https://github.com/user-attachments/assets/4f4a0262-8b4a-497e-926f-3e91eb60d3c4)
 
+Nessa análise, a intenção foi demonstrar a soma de pagamentos por tipo de pagamento (cartão de crédito, boleto, entre outros).
+Também na consulta foram extraídas informações como id e código postal de cliente. No entanto, como não possui repetição de 
+cliente, o resultado é individual. Assim, faz-se necessário remover esses itens da consulta para conseguir a soma por tipo 
+de pagamento.
+
+Vale ressaltar que a consulta atenrior não seria possível em sistema Oracle, sendo necessário adaptar para o formato 
+com o uso das aliases adotadas:
+```sql
+SELECT CAST(SUM(PAG) AS NUMERIC(15, 2)), TIPO, CLIENTE, COD FROM (SELECT PD.PAYMENT_VALUE PAG, PD.PAYMENT_TYPE TIPO, CUSTOMER_DATASET.CUSTOMER_ID CLIENTE, 
+CUSTOMER_DATASET.CUSTOMER_ZIP_CODE_PREFIX COD
+		FROM PAYMENT_DATASET PD
+		INNER JOIN ORDERS_DATASET OD ON (OD.ORDER_ID = PD.ORDER_ID)
+		INNER JOIN CUSTOMER_DATASET ON (OD.CUSTOMER_ID = CUSTOMER_DATASET.CUSTOMER_ID))
+GROUP BY CLIENTE, COD, TIPO
+```
 📬 Contato
 
 📧 E-mail: [p.paulo.pp08@gmail.com](p.paulo.pp08@gmail.com)  
