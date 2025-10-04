@@ -28,7 +28,7 @@ Após baixadas as planilhas, o uso de knime foi necessário para transformar os 
 "O KNIME é uma plataforma de código aberto e "low-code" para análise de dados, integração e aprendizado de máquina. Seu uso de uma interface visual de arrastar e soltar (drag-and-drop) permite que usuários construam fluxos de trabalho analíticos sem escrever linhas de código, embora também ofereça a opção de integrar códigos para personalização avançada."
 ![brazilian_sales-knime-etl](https://github.com/user-attachments/assets/40486059-becc-4ca3-af47-9cbf535369c4)  
 
-Vale ressaltar que essa não é a melhor maneira de integrar os dados a uma base de dados, sendo necessário o uso de loops. No entanto, a distância temporal entre o meu último uso do KNIME e a atualidade é um tanto grande, tendo-me feito recorrer a métodos mais "brutos".
+```Vale ressaltar que essa não é a melhor maneira de integrar os dados a uma base de dados, sendo necessário o uso de loops. No entanto, a distância temporal entre o meu último uso do KNIME e a atualidade é um tanto grande, tendo-me feito recorrer a métodos mais "brutos".
 ---
 
 ## 🔎 Consultas SQL e Insights
